@@ -3,6 +3,7 @@ import websockets
 import json
 
 CHANNEL_NAME = "imo7x9"
+
 async def listen():
     ws_url = f"wss://chat.kick.com/socket.io/?channel={CHANNEL_NAME}&EIO=3&transport=websocket"
 
@@ -22,7 +23,6 @@ async def listen():
                         msg = data["content"]
                         print(f"{username}: {msg}")
 
-                        # ✅ الرد على !قوانين
                         if msg.strip() == "!قوانين":
                             response = (
                                 "📜 قوانين البث الرسمية:\n"
@@ -36,7 +36,6 @@ async def listen():
                                 "💚 استمتع بالبث وخلّك إيجابي!"
                             )
                             print(f"🟢 رد البوت: {response}")
-                            # ⚠️ لا يمكن إرسال الرسالة فعليًا في Kick بدون Authorization Token
 
             except Exception as e:
                 print(f"⚠️ خطأ: {e}")
