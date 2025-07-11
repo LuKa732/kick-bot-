@@ -2,8 +2,7 @@ import asyncio
 import websockets
 import json
 
-CHANNEL_NAME = "اسم_قناتك"  # ← غيّرها لاسم قناتك في Kick بدون @
-
+CHANNEL_NAME = "imo7x9"
 async def listen():
     ws_url = f"wss://chat.kick.com/socket.io/?channel={CHANNEL_NAME}&EIO=3&transport=websocket"
 
